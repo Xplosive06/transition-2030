@@ -31,7 +31,7 @@
                 </li>
             </ul>
             <br>
-            <p><b>&copy M.Notta &middot {{ date('Y') }}</b></p>
+            <p><b>{{ config('app.name') }} &copy M.Notta &middot {{ date('Y') }}</b></p>
         </div>
     </div>
     </div>

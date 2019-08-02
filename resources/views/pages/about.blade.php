@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2>Qu'est ce que <strong>Transition 2030?</strong></h2>
+        <h2>Qu'est ce que <strong>{{ config('app.name') }}?</strong></h2>
         <p>Dreamcatcher &dash; artisan selvage biodiesel excepteur, health goth edison bulb godard <a
                     href="http://www.blog-p4.transition-2030.fr/home.html" target="_blank">Blog de Jean</a> sriracha
             wayfarers deserunt
@@ -23,7 +23,7 @@
         <p>Plus d'infos : <a href="https://fr.wikipedia.org/wiki/Collapsologie#Pr%C3%A9sentation">ici</a>. </p>
         <hr>
 
-        <h2>Quels sont les outils et services utilisés sur <strong>Transition 2030</strong>?</h2>
+        <h2>Quels sont les outils et services utilisés sur <strong>{{ config('app.name') }}</strong>?</h2>
         <p>Globalement le site est construit à partir du Framework Laravel &amp stylisé avec Bootstrap. Mais il y'a
             pleins d'autres services utilisés : </p>
         <ul>
