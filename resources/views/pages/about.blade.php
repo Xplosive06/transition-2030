@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default', ['title' => 'À propos'])
 
 @section('content')
     <div class="container">
@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <p>N'hésitez pas à venir aider sur ce projet ici : <a href="#">Lien Github</a>.</p>
+        <p>N'hésitez pas à venir aider sur ce projet ici : <a href="https://github.com/Xplosive06/transition-2030">Lien Github</a>.</p>
         <hr>
 
         <h2>Qu'est ce que la collapsologie?</h2>

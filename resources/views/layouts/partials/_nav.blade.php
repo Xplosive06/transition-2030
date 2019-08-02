@@ -12,8 +12,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{{ route('root_path') }}">Home</a></li>
-                <li><a href="{{ route('about_path') }}">About</a></li>
+                <li><a href="{{ route('root_path') }}">Accueil</a></li>
+                <li><a href="{{ route('about_path') }}">À propos</a></li>
                 <li><a href="#users">Transitionneurs</a></li> <!-- Artisans -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
