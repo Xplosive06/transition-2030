@@ -18,9 +18,8 @@ class ContactsController extends Controller
     {
         $message = Message::create($request->only('name', 'email', 'message'));
 
-        $mailable = new ContactMessageCreated($message);
-
-        Mail::to(config('transition2030.admin_support_email'))->send($mailable);
+        Mail::to(config('transition2030.admin_support_email'))
+            ->send(new ContactMessageCreated($message));
 
         flashy('Nous vous recontacterons dans les plus brefs délais!');
 
