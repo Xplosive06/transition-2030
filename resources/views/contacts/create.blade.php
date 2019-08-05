@@ -9,8 +9,8 @@
                         href="mailto:{{ config('transition2030.admin_support_email') }}">contactez-nous</a>.
                 </p> <!-- Ne fonctionne pas sous mon chrome -->
 
-                <form action="{{ route('contact_path') }}" method="POST">
-                    {{ csrf_field() }}
+                <form action="{{ route('contacts.store') }}" method="POST">
+                    @csrf
                     <div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
                         <label for="name" class="control-label">Nom</label>
                         <input type="text" value="{{ old('name') }}" name="name" id="name" class="form-control" required>

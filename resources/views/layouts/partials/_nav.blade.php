@@ -8,12 +8,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('root_path') }}">{{ config('app.name') }}</a>
+            <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="{{ set_active_route('root_path') }}"><a href="{{ route('root_path') }}">Accueil</a></li>
-                <li class="{{ set_active_route('about_path') }}"><a href="{{ route('about_path') }}">À propos</a></li>
+                <li class="{{ set_active_route('home') }}"><a href="{{ route('home') }}">Accueil</a></li>
+                <li class="{{ set_active_route('about') }}"><a href="{{ route('about') }}">À propos</a></li>
                 <li><a href="#users">Transitionneurs</a></li> <!-- Artisans -->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
@@ -28,7 +28,7 @@
                         <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
-                <li class="{{ set_active_route('contact_path') }}"><a href="{{ route('contact_path') }}">Contact</a></li>
+                <li class="{{ set_active_route('contacts.create') }}"><a href="{{ route('contacts.create') }}">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#login">Se connecter</a></li>

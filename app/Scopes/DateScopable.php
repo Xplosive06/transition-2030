@@ -9,6 +9,6 @@ trait DateScopable
 {
     public function scopeTwoMonthsOld(Builder $query)
     {
-        $query->where('created_at', '<=', Carbon::parse('2 months ago'));
+        $query->where('created_at', '<=', now()->subMonths(2));
     }
 }
