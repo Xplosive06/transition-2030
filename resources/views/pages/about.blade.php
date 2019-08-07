@@ -9,7 +9,7 @@
             activated charcoal jean shorts.</p>
         <div class="row">
             <div class="col-md-6">
-                <p class="alert alert-warning"><i class="fas fa-exclamation"></i><strong> Cette application a été créé
+                <p class="alert alert-warning"><i class="fas fa-exclamation-circle"></i><strong> Cette application a été créé
                         par <a
                                 href="https://www.linkedin.com/in/mike-notta-720942157/">Mike Notta</a> pour des raisons
                         d'apprentissage.</strong></p>
