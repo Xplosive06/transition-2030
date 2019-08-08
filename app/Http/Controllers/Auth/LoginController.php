@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -20,6 +21,8 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    private $username;
+
     /**
      * Where to redirect users after login.
      *
@@ -35,5 +38,49 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+
+        $this->username = $this->guessUsername();
+    }
+
+    /**
+     * Validate the user login request.
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return void
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    protected function validateLogin(Request $request)
+    {
+        $request->validate([
+            'login' => 'required|string',
+            'password' => 'required|string',
+        ]);
+    }
+
+    /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Get the needed authorization credentials from the request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array
+     */
+    protected function credentials(Request $request)
+    {
+        return [$this->username() => $request->login, 'password' => $request->password ];
+    }
+
+    private function guessUsername()
+    {
+        return filter_var(request('login'), FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
     }
 }
