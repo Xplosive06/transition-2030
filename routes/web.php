@@ -21,6 +21,11 @@ Route::get('/contact', 'ContactsController@create')->name('contacts.create');
 
 Route::post('/contact', 'ContactsController@store')->name('contacts.store');
 
-Auth::routes(['verify' => true]);
+Route::middleware('auth'/*, 'verified'*/)->group(function () {
+    Route::resource('profile', 'User\UserProfileController', [
+        'only' => ['edit', 'update', 'destroy', 'show'],
+        'parameters' => ['profile' => 'user']
+    ]);
+});
 
-/*Route::get('/home', 'HomeController@index')->name('home');*/
+Auth::routes(['verify' => true]);
