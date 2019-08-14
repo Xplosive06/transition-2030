@@ -49,6 +49,12 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('profiles.show', auth()->id()) }}">
+                                {{ __('Mon profil') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('profiles.edit', auth()->id()) }}">
+                                {{ __('Modifier mon profil') }}
+                            </a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

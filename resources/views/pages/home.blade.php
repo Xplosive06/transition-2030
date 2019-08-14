@@ -20,7 +20,7 @@
                 href="{{ route('register') }}">inscrire</a> pour accéder aux personnes présentes autour de vous.</h2>
     </div>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}"
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{--{{ env('GOOGLE_API_KEY') }}--}}"
             type="text/javascript">google.maps.event.addDomListener(window, 'load', initMap);
     </script>
 
