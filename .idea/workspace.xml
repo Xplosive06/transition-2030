@@ -2,23 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4666f14-bcac-47b9-be56-7386e60f2e68" name="Default Changelist" comment="">
-
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_07_161456_make_last_and_first_name_column_nullable_in_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/google_input_city.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/map_constructor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X03d450a30a2924f5a9b1fa6e09a7e5c4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X0654739e76689e58e65fa367cf5fc43e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X06813c3b38961025d32274c3a0b4adcd.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X074b94f455eb3f4b16b0fa0f427e0de7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X0a437b3a20a899af2480ecb430bb417b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X0e4fc1190a452002a8ccc97d836fbf71.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X17729f49fcd59646fdafb3c1275debe3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X1880e1afa01c3b5d117e3c19173728fa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X1edd099ce838ef808af1f0af561090fc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X250d6b7e3f1df66423b0a95aefd5fa55.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X3240df564503babf4076b7a016bc4bc0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X336230d1214b96aa72377f244d27147a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X34b9cd5d83bacf4ee96c8f589dac6fa9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X35871718556489e05e291a3117575d32.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X36f4aa2a789875058c80f0f915b6e37d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X3f5278c533191037eae3db590324412c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X4976d0bba3694110675fd289538f4617.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X4ea9aa2e7a571f7f24ce7ea1c1ac834d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X51f31d3e457e822bd24397da445c657b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X52ae5659a35997aeb559afb453769467.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X55fc72c0b9c41c411242f603b3d60e2e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X59f44c1efb1bd4872998601ce791cfa2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X5a87adedf181bb73af390b8c475914fb.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X5abfc16a2cfeaf7d98a3ba35d72446ef.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X621e1738d369a0de41346d55a64761aa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X680c566c3e7fae0dd7981e08e797aac7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X6821addd059df3f5ad05ce7a2ef8f11b.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X6bc76ecab29475907e36527244a509df.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X6e22db58a3a65f1afb303d2ed6209419.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X71b2c04f22ce5d35bcad6a6e2f68f877.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X7272207f61459426e76452aa5d12cb73.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X8210414c00dd86b230753d4c402d078d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/X8c62c37f7ffe7b8ee4e7ec6e4ed6b936.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xa7d999f29214997ac7c0b421505251b4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xaf7ca2bdf301c51fba9e6f6ec0d2366d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xb43620db2eb68d736625f2b6941667c9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xb538f0e0898ead5bb8d9d6b65fe94634.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xb6b9da47d8df7ac7a45c034092c54baa.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xc1260ce0d9bad2682be0c445cf0c5ba4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xc2688baa7a39b12f7e604e95886afcf8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xc4334b7cbccc066cce9a8383e1ea76f9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xc504ac5575cbcc7df9ea5cde6933d7bc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xcef95fafe4f4eab1eac06b0b6e82bc85.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xdc3d8887ee27c8e4f6a26d1d6a1d4456.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xdc95cc6e5e4fb5815cfdffbab9348934.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xe535ab2d854de8cf27b9627421974a4f.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xe5b0339d78efa73df0384e554a9421a8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xe5d2e0265efed77c058167c75ec62d60.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xea5b1b15f6febebd9cd8272da27a7bda.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xebf72292d9e04a8530d4b4d4662fd314.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xed6a2894f128e7c2c4a9cc3a32c12f0c.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xeed9665e96f8b1896ff617ce35a821b1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xf49527a078f536760f5435db749cbbb0.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xf7fefd6120f52cf158a3a7f2d3c94235.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/debugbar/Xfbabc2661dcf2471f68e002a24da6c64.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/transition-2030.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/transition-2030.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/fr/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/fr/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -127,6 +175,9 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
     </include_path>
   </component>
   <component name="ProjectId" id="1Oulcd5IPZglVxQXkN7FKhNByma" />
@@ -137,19 +188,19 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/fr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\php\transition-2030\public\js" />
+      <recent name="C:\wamp64\www\php\transition-2030\resources\lang\fr" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\php\transition-2030\app\Models" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-
-      <recent name="C:\wamp64\www\php\transition-2030\resources\lang\fr" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -193,6 +244,12 @@
       <workItem from="1565191493357" duration="1826000" />
       <workItem from="1565193349395" duration="213000" />
       <workItem from="1565193582381" duration="11365000" />
+      <workItem from="1565783953245" duration="245000" />
+      <workItem from="1565784201050" duration="3000" />
+      <workItem from="1565784223252" duration="9000" />
+      <workItem from="1565784331251" duration="56000" />
+      <workItem from="1565784403426" duration="12000" />
+      <workItem from="1565784428511" duration="54000" />
     </task>
     <servers />
   </component>

@@ -66,6 +66,27 @@
                             </div>
 
                             <div class="form-group row">
+                                <label for="address_city"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Ville') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="address_city" type="search"
+                                           class="form-control @error('address_city') is-invalid @enderror"
+                                           name="address_city"
+                                           value="{{ old('address_city') }}" required autocomplete="off" autofocus
+                                           placeholder="">
+                                    <input type="hidden" name="address_latitude" id="address_latitude" value=""/>
+                                    <input type="hidden" name="address_longitude" id="address_longitude" value=""/>
+
+                                    @error('address_city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <label for="email"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Adresse e-mail') }}</label>
 
@@ -122,4 +143,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&libraries=places"></script>
+
+    <script type="text/javascript" src="{{ asset('js/google_input_city.js') }}"></script>
 @endsection
