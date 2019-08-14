@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4666f14-bcac-47b9-be56-7386e60f2e68" name="Default Changelist" comment="">
-
       <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_07_161456_make_last_and_first_name_column_nullable_in_users_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/transition-2030.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/transition-2030.iml" afterDir="false" />
@@ -18,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/verify.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_nav.blade.php" afterDir="false" />
-
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,7 +146,6 @@
       <recent name="C:\wamp64\www\php\transition-2030\app\Models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-
       <recent name="C:\wamp64\www\php\transition-2030\resources\lang\fr" />
     </key>
   </component>

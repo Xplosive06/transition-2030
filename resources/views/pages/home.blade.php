@@ -1,6 +1,7 @@
 @extends('layouts.default', ['title' => 'Accueil'])
 
 @section('content')
+
     <style>
         #map {
             height: 761px;
@@ -39,3 +40,4 @@
 
     <script src="{{ asset('js/map_constructor.js') }}" type="text/javascript"></script>
 @endsection
+
