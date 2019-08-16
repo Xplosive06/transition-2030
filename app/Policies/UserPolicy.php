@@ -9,6 +9,11 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
+    public function manage(User $user, User $userprofile)
+    {
+        return $user->id === $userprofile->id;
+    }
+
     /**
      * Determine whether the user can view any models.
      *

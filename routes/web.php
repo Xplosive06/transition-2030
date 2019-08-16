@@ -17,6 +17,8 @@ Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('/about', 'PagesController@about')->name('about');
 
+Route::get('/users_list', 'PagesController@users_list')->name('users_list');
+
 Route::get('/contact', 'ContactsController@create')->name('contacts.create');
 
 Route::get('/contact', 'ContactsController@create')->name('contacts.create');

@@ -11,11 +11,8 @@
                 <li class="nav-item {{ set_active_route('home') }}">
                     <a class="nav-link" href="{{ route('home') }}">Accueil</a>
                 </li>
-                <li class="nav-item {{ set_active_route('about') }}">
-                    <a class="nav-link" href="{{ route('about') }}">À propos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Transitionneurs</a>
+                <li class="nav-item {{ set_active_route('users_list') }}">
+                    <a class="nav-link" href="{{ route('users_list') }}">Transitionneurs</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="planetDropdown" data-toggle="dropdown"
@@ -31,6 +28,9 @@
                 <li class="nav-item">
                     <a class="nav-link {{ set_active_route('contacts.create') }}" href="{{ route('contacts.create') }}">Contact</a>
                 </li>
+                <li class="nav-item {{ set_active_route('about') }}">
+                    <a class="nav-link" href="{{ route('about') }}">À propos</a>
+                </li>
 
             </ul>
             <ul class="navbar-nav mr-auto">
@@ -43,9 +43,11 @@
                     </li>
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->username }} <span class="caret"></span>
+                        <a id="navbarDropdown" class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position:relative;padding-left:50px">
+                            <img class="img-fluid" src="{{ asset('img/uploads/avatars/' . Auth::user()->avatar) }}"
+                             style="width:40px;height:40px;position:absolute;bottom:1px;left:2px;border-radius:50%">
+                            {{ Auth::user()->username }}
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

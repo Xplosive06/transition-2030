@@ -21,5 +21,12 @@ class PagesController extends Controller
     {
         return view('pages.about');
     }
+
+    public function users_list()
+    {
+        $users_list = User::all();
+
+        return view('pages.users_list', compact('users_list'));
+    }
 }
 
