@@ -24,7 +24,7 @@ class PagesController extends Controller
 
     public function users_list()
     {
-        $users_list = User::all();
+        $users_list = User::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('pages.users_list', compact('users_list'));
     }

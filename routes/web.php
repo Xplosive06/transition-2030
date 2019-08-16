@@ -17,13 +17,15 @@ Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('/about', 'PagesController@about')->name('about');
 
-Route::get('/users_list', 'PagesController@users_list')->name('users_list');
+Route::get('/users_list', 'PagesController@users_list')->name('users_list')->middleware('auth');
 
 Route::get('/contact', 'ContactsController@create')->name('contacts.create');
 
 Route::get('/contact', 'ContactsController@create')->name('contacts.create');
 
 Route::post('/contact', 'ContactsController@store')->name('contacts.store');
+
+Route::get('/show_delete/{id}', 'ProfileController@show_delete')->name('profiles.show_delete')->middleware('auth');
 
 Route::middleware('auth'/*, 'verified'*/)->group(function () {
     Route::resource('profiles', 'ProfileController', [

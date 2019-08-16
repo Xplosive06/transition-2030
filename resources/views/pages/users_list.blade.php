@@ -10,7 +10,7 @@
     <section id="team" class="pb-5">
         <div class="container">
             <h1 class="section-title h1">Tous les transitionneurs</h1>
-            <h2 class="card-subtitle h2">Total : {{ count($users_list) }}</h2>
+            <h2 class="card-subtitle h2">Total : {{ $users_list->total() }}</h2>
             <br>
             <div class="row">
             @foreach($users_list as $user)
@@ -26,7 +26,13 @@
                                                     alt="card image"></p>
                                             <h4 class="card-title">{{ $user->username }}</h4>
                                             <p class="card-text">{{ $user->description }}</p>
-                                            <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                            <hr>
+                                            <div class="d-flex justify-content-around">
+                                                <a href="{{ route('profiles.show', $user->id) }}"
+                                                   class="btn btn-primary btn-sm"><i class="fas fa-user-circle"></i></a>
+                                                <a href="#"
+                                                   class="btn btn-primary btn-sm"><i class="far fa-comments"></i></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -36,6 +42,10 @@
                     <!-- ./Team member -->
                 @endforeach
 
+            </div>
+            <br>
+            <div class="d-flex justify-content-center">
+                    {{ $users_list->links() }}
             </div>
         </div>
     </section>

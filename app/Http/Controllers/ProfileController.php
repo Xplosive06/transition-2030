@@ -17,7 +17,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        return view('profiles.show', compact('id'));
+        $user = User::find($id);
+        return view('profiles.show', compact('user'));
     }
 
     /**
@@ -31,16 +32,14 @@ class ProfileController extends Controller
     {
         $this->authorize('manage', $user);
 
-        $city_forms = "<input type=\"hidden\" name=\"address_latitude\" id=\"address_latitude\" value=\"\"/>
-                                    <input type=\"hidden\" name=\"address_longitude\" id=\"address_longitude\" value=\"\"/>";
-
         $arrayOfParams = [
-            ["title" => "Adresse email", "type" => "email", "name" => "email", "required" => true, "value" => $user->email, "add_more" => ""],
-            ["title" => "Pseudo", "type" => "username", "name" => "username", "required" => true, "value" => $user->username, "add_more" => ""],
-            ["title" => "Prénom", "type" => "first_name", "name" => "first_name", "required" => false, "value" => $user->first_name, "add_more" => ""],
-            ["title" => "Nom", "type" => "last_name", "name" => "last_name", "required" => false, "value" => $user->last_name, "add_more" => ""],
-            ["title" => "Ville", "type" => "city", "name" => "address_city", "required" => false, "value" => $user->address_city, "add_more" => $city_forms],
-            ["title" => "Description", "type" => "textarea", "name" => "description", "required" => false, "value" => $user->description, "add_more" => ""],
+            ["title" => "Adresse email", "type" => "email", "name" => "email", "required" => true, "value" => $user->email],
+            ["title" => "Pseudo", "type" => "username", "name" => "username", "required" => true, "value" => $user->username],
+            ["title" => "Prénom", "type" => "first_name", "name" => "first_name", "required" => false, "value" => $user->first_name],
+            ["title" => "Nom", "type" => "last_name", "name" => "last_name", "required" => false, "value" => $user->last_name],
+            ["title" => "Ville", "type" => "city", "name" => "address_city", "required" => false, "value" => $user->address_city],
+            ["title" => "Ville", "type" => "hidden", "name" => "address_latitude", "required" => false, "value" => $user->address_latitude],
+            ["title" => "Ville", "type" => "hidden", "name" => "address_longitude", "required" => false, "value" => $user->address_longitude],
         ];
         return view('profiles.edit', compact('user', 'arrayOfParams'));
     }
@@ -99,9 +98,22 @@ class ProfileController extends Controller
      *
      * @param int $id
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $this->authorize('manage', $user);
+        $user->delete();
+
+        return view('/');
+    }
+
+    public function show_delete($id)
+    {
+        $user = User::find($id);
+        $this->authorize('manage', $user);
+
+        return view('profiles.show_delete', compact('user'));
     }
 }

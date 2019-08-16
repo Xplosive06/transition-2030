@@ -44,9 +44,10 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position:relative;padding-left:50px">
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre
+                           style="position:relative;padding-left:50px">
                             <img class="img-fluid" src="{{ asset('img/uploads/avatars/' . Auth::user()->avatar) }}"
-                             style="width:40px;height:40px;position:absolute;bottom:1px;left:2px;border-radius:50%">
+                                 style="width:40px;height:40px;position:absolute;bottom:1px;left:2px;border-radius:50%">
                             {{ Auth::user()->username }}
                         </a>
 

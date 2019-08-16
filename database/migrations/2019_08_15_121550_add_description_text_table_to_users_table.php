@@ -14,7 +14,7 @@ class AddDescriptionTextTableToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->longText('description')->after('avatar');
+            $table->longText('description')->after('avatar')->nullable();
         });
     }
 

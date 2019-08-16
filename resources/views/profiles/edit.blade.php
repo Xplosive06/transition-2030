@@ -1,5 +1,10 @@
 @extends('layouts.default', ['title' => 'Editer mon profil'])
 
+@section('css')
+
+    <link href="{{ asset('css/profile_edit.css') }}" rel="stylesheet" type="text/css">
+
+@endsection
 
 @section('content')
     <div class="container">
@@ -22,11 +27,12 @@
 
                             <label for="avatar" hidden>Insérer une image : </label>
                             <input type="hidden" name="MAX_FILE_SIZE" value="512000"/>
-                            <input type="file" name="avatar" id="avatar" class="form-control{{ $errors->has('avatar') ? ' is-invalid' : '' }}">
+                            <input type="file" name="avatar" id="avatar"
+                                   class="form-control{{ $errors->has('avatar') ? ' is-invalid' : '' }}">
 
                             @if ($errors->has('avatar'))
                                 <div class="invalid-feedback">
-                                     {!! $errors->first('avatar') !!}
+                                    {!! $errors->first('avatar') !!}
                                 </div>
                             @endif
                         </div>
@@ -41,19 +47,34 @@
 
             @foreach($arrayOfParams as $key => $value)
                 @include('layouts.partials.form-group', [
-                    'title' => __($value["title"]),
+                    'title' => $value["title"],
                     'type' => $value["type"],
                     'name' => $value["name"],
                     'required' => $value["required"],
                     'value' => $value["value"],
-                    'add_more' => $value["add_more"]
+                    'label_id' => 'label_'.$value["name"],
                 ])
 
             @endforeach
+            <div class="form-group">
+                <label for="description">Déscription</label>
+                <textarea id="description" type="description" rows="5"
+                          class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}"
+                          name="description">{{ old("description", isset($user->description) ? $user->description : '') }}</textarea>
+
+                @if ($errors->has('description'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('description') }}
+                    </div>
+                @endif
+            </div>
             <br>
-            @component('components.button')
-                @lang('Envoyer')
-            @endcomponent
+            <div class="d-flex justify-content-around">
+                @component('components.button')
+                    @lang('Envoyer')
+                @endcomponent
+                <a class="text-danger" href="{{ route('profiles.show_delete', $user) }}">Supprimer votre compte</a>
+            </div>
 
 
         </form>
@@ -65,4 +86,4 @@
     <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&libraries=places"></script>
 
     <script type="text/javascript" src="{{ asset('js/google_input_city.js') }}"></script>
-@show
+@stop
