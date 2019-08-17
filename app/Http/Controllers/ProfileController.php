@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
@@ -47,8 +49,11 @@ class ProfileController extends Controller
     public function updateAvatar(Request $request, User $user)
     {
         if($request->hasFile('avatar')){
+            $this->checkIfUserHasImage($user);
+
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
+
             Image::make($avatar)->resize(300, 300)->save(public_path('img/uploads/avatars/' . $filename));
 
             $user->avatar = $filename;
@@ -104,6 +109,7 @@ class ProfileController extends Controller
     {
         $user = User::find($id);
         $this->authorize('manage', $user);
+        $this->checkIfUserHasImage($user);
         $user->delete();
 
         return view('/');
@@ -115,5 +121,12 @@ class ProfileController extends Controller
         $this->authorize('manage', $user);
 
         return view('profiles.show_delete', compact('user'));
+    }
+
+    public function checkIfUserHasImage($user)
+    {
+        if (isset($user->avatar)){
+                File::delete(public_path('img/uploads/avatars/' . $user->avatar));
+            }
     }
 }

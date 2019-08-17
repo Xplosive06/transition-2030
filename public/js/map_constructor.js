@@ -1,6 +1,6 @@
 /* ===================================== MAP =======================================*/
 
-$(document).ready(function() {
+$(document).ready(function () {
     chekIfUserConnected(currentUser);
 
     function chekIfUserConnected(currentUser) {
@@ -35,13 +35,28 @@ $(document).ready(function() {
 
 // Loop through the results array and place a marker and an icon for each
 // set of coordinates.
-        for (let i = 0; i < usersLatLng.length; i++) {
-            const latLng = new google.maps.LatLng(usersLatLng[i].address_latitude, usersLatLng[i].address_longitude);
+
+        for (let i = 0; i < usersMapInfos.length; i++) {
+            const contentString = '<div id="content">' +
+                '<a href="' + window.location.href + "profiles/" + usersMapInfos[i].id + '">' +
+                '<h1 id="firstHeading" class="firstHeading">' +
+                usersMapInfos[i].username + '</h1></a>' +
+                '<img class="img-thumbnail" src="' + window.location.href + "img/uploads/avatars/" + usersMapInfos[i].avatar + '" >' +
+                '<br>' +
+                '<div id="bodyContent">' +
+                '<p>' + usersMapInfos[i].description + '</p>' +
+                '</div>' +
+                '</div>';
+
+            const infowindow = new google.maps.InfoWindow({content: contentString});
+            const latLng = new google.maps.LatLng(usersMapInfos[i].address_latitude, usersMapInfos[i].address_longitude);
             const marker = new google.maps.Marker({
                 position: latLng,
                 map: map,
-                title: "Username"
+                title: usersMapInfos[i].username
             });
+
+            marker.addListener('click', function() {infowindow.open(map, marker);});
 
         }
     }

@@ -1,5 +1,8 @@
 @extends('layouts.default', ['title' => 'Profil'])
 
+@section('css')
+    <link href="{{ asset('css/images.css') }}" rel="stylesheet" type="text/css">
+@endsection
 
 @section('content')
     <div class="container col-md-8 col-sm-10 col-lg-8">
@@ -7,8 +10,7 @@
         <div class="card">
             <div class="card-header">
                 <div class="d-flex justify-content-between">
-                    <img class="card-img-top" src="{{ asset('img/uploads/avatars/' . $user->avatar) }}"
-                         style="width:150px;height:150px;float:left;border-radius:50%">
+                    <img class="card-img-top" src="{{ asset('img/uploads/avatars/' . $user->avatar) }}">
 
                     <h1 class="card-title">
                         {{ $user->username }}
@@ -29,8 +31,3 @@
 
     </div>
 @endsection
-@section('script')
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&libraries=places"></script>
-
-    <script type="text/javascript" src="{{ asset('js/google_input_city.js') }}"></script>
-@show

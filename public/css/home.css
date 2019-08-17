@@ -1,0 +1,14 @@
+#map {
+    height: 761px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#displayed_if_not_connected {
+    display: none;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+}

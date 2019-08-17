@@ -9,12 +9,12 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $users_lat_lng = User::select(array('address_latitude', 'address_longitude'))->get();
+        $users_map_infos = User::select(array('id', 'address_latitude', 'address_longitude', 'username', 'avatar', 'description'))->get();
 
         if (Auth::user()) {
             $current_user = Auth::user();
         }
-        return view('pages.home', compact('users_lat_lng', 'current_user'));
+        return view('pages.home', compact('users_map_infos', 'current_user'));
     }
 
     public function about()

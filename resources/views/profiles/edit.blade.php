@@ -1,9 +1,9 @@
 @extends('layouts.default', ['title' => 'Editer mon profil'])
 
 @section('css')
-
     <link href="{{ asset('css/profile_edit.css') }}" rel="stylesheet" type="text/css">
 
+    <link href="{{ asset('css/images.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
@@ -14,8 +14,7 @@
             <div class="container">
                 <div class="card-header">
                     <div class="row">
-                        <img class="img-thumbnail" src="{{ asset('img/uploads/avatars/' . $user->avatar) }}"
-                             style="width:150px;height:150px;float:left;border-radius:50%">
+                        <img class="img-thumbnail" src="{{ asset('img/uploads/avatars/' . $user->avatar) }}">
 
                         <h1 class="card-title">
                             {{ $user->username }}

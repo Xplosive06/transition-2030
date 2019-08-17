@@ -1,0 +1,6 @@
+.img-thumbnail, .card-img-top {
+    width: 150px;
+    height: 150px;
+    float: left;
+    border-radius: 50%;
+}
