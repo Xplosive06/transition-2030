@@ -48,7 +48,7 @@
                            style="position:relative;padding-left:50px">
                             <img class="img-fluid" src="{{ asset('img/uploads/avatars/' . Auth::user()->avatar) }}"
                                  style="width:40px;height:40px;position:absolute;bottom:1px;left:2px;border-radius:50%">
-                            {{ Auth::user()->username }}
+                            {{ Auth::user()->username }} <span class="new-messages-span alert-light">@include('messenger.unread-count')</span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -58,6 +58,8 @@
                             <a class="dropdown-item" href="{{ route('profiles.edit', auth()->id()) }}">
                                 {{ __('Modifier mon profil') }}
                             </a>
+                            <a class="dropdown-item" href="{{ route('messages') }}">{{ __('Messages') }} @include('messenger.unread-count')</a>
+                            <a class="dropdown-item" href="{{ route('messages.create') }}"> {{ __('Nouveau message') }}</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

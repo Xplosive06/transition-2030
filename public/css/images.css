@@ -4,3 +4,21 @@
     float: left;
     border-radius: 50%;
 }
+
+.img-fluid {
+    width:40px;
+    height:40px;
+    bottom:1px;
+    left:2px;
+    border-radius:50%;
+}
+
+.index-images {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.img-show-message {
+    margin-right: 10px;
+}

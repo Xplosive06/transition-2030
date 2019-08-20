@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\Models\Message;
+use App\Models\MessagesMails;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -19,7 +19,7 @@ class ContactMessageCreated extends Mailable implements ShouldQueue
      *
      * @return void
      */
-    public function __construct(Message $msg)
+    public function __construct(MessagesMails $msg)
     {
         $this->msg = $msg;
     }

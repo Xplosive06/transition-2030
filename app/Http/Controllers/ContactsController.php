@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Message;
+use App\Models\MessagesMails;
 use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMessageCreated;
 use Illuminate\Support\Facades\Mail;
@@ -16,7 +16,7 @@ class ContactsController extends Controller
 
     public function store(ContactRequest $request)
     {
-        $message = Message::create($request->only('name', 'email', 'message'));
+        $message = MessagesMails::create($request->only('name', 'email', 'message'));
 
         Mail::to(config('transition2030.admin_support_email'))
             ->send(new ContactMessageCreated($message));

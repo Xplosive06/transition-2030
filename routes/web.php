@@ -11,7 +11,8 @@
 |
 */
 
-use App\Mail\ContactMessageCreated;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@home')->name('home');
 
@@ -34,6 +35,12 @@ Route::middleware('auth'/*, 'verified'*/)->group(function () {
     ]);
 });
 
-Auth::routes(['verify' => true]);
+Route::group(['prefix' => 'messages'], function () {
+    Route::get('/', ['as' => 'messages', 'uses' => 'MessagesController@index']);
+    Route::get('create', ['as' => 'messages.create', 'uses' => 'MessagesController@create']);
+    Route::post('/', ['as' => 'messages.store', 'uses' => 'MessagesController@store']);
+    Route::get('{id}', ['as' => 'messages.show', 'uses' => 'MessagesController@show']);
+    Route::put('{id}', ['as' => 'messages.update', 'uses' => 'MessagesController@update']);
+});
 
-/*Route::get('/home', 'HomeController@index')->name('home');*/
+Auth::routes(['verify' => true]);
