@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-sm-10 mx-auto">
+            <div class="col-md-10 col-sm-12 mx-auto">
                 <h2>Entrez en contact</h2>
                 <p class="text-muted">Si vous rencontrez des soucis particuliers <a
                         href="mailto:{{ config('transition2030.admin_support_email') }}">contactez-nous</a>.

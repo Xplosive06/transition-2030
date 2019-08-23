@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-    <div class="col-md-6">
+    <div class="container">
         <h1>{{ $thread->subject }}</h1>
         @each('messenger.partials.messages', $thread->messages, 'message')
 

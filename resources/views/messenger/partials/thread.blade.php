@@ -7,8 +7,8 @@
     <p>
 
         <small><strong>Participant(s) :</strong>
-            @foreach($thread->participants as $participant){{ $participant->user->username }}
-            <img class="card-img index-images" src="{{ asset('img/uploads/avatars/' . $participant->user->avatar) }}">
+            @foreach($thread->participants as $participant)<a href="{{ route('profiles.show', $participant->user->id) }}">{{ $participant->user->username }}
+                <img class="card-img index-images" src="{{ asset('img/uploads/avatars/' . $participant->user->avatar) }}"></a>
         @endforeach
         </small>
     </p>

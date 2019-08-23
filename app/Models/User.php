@@ -20,7 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'first_name', 'last_name', 'username', 'email',
         'password', 'address_city', 'address_latitude',
-        'address_longitude','description'
+        'address_longitude', 'description', 'role'
     ];
 
     /**
@@ -40,4 +40,11 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function isAdmin ()
+    {
+        if ($this->role == 'admin') {
+            return true;
+        }
+    }
 }

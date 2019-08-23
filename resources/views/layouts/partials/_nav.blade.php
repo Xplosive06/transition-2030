@@ -14,7 +14,7 @@
                 <li class="nav-item {{ set_active_route('users_list') }}">
                     <a class="nav-link" href="{{ route('users_list') }}">Transitionneurs</a>
                 </li>
-                <li class="nav-item dropdown">
+               {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="planetDropdown" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">Planet</a>
                     <div class="dropdown-menu" aria-labelledby="planetDropdown">
@@ -24,7 +24,7 @@
                         <a class="dropdown-item" href="#">Separated link</a>
                         <a class="dropdown-item" href="#">One more separated link</a>
                     </div>
-                </li>
+                </li>--}}
                 <li class="nav-item">
                     <a class="nav-link {{ set_active_route('contacts.create') }}" href="{{ route('contacts.create') }}">Contact</a>
                 </li>
@@ -52,6 +52,11 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            @if (Auth::user()->isAdmin())
+                                <a class="dropdown-item" href="{{ route('admin') }}">
+                                {{ __('Administration') }}
+                            </a>
+                            @endif
                             <a class="dropdown-item" href="{{ route('profiles.show', auth()->id()) }}">
                                 {{ __('Mon profil') }}
                             </a>

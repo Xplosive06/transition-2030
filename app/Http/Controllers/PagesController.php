@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StaticPages;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +20,9 @@ class PagesController extends Controller
 
     public function about()
     {
-        return view('pages.about');
+        $about_page = StaticPages::where('page_name', '=', 'about' )->first();
+
+        return view('pages.about', compact('about_page'));
     }
 
     public function users_list()
@@ -27,6 +30,15 @@ class PagesController extends Controller
         $users_list = User::orderBy('created_at', 'DESC')->paginate(10);
 
         return view('pages.users_list', compact('users_list'));
+    }
+
+    public function admin()
+    {
+        $current_user = Auth::user();
+        $users = User::all();
+        $pages = StaticPages::all();
+
+        return view('admin.show_admin', compact('current_user', 'users', 'pages'));
     }
 }
 

@@ -14,17 +14,21 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'PagesController@home')->name('home');
+Route::get('/', 'PagesController@home')->name('home')->middleware('auth');
 
 Route::get('/about', 'PagesController@about')->name('about');
 
 Route::get('/users_list', 'PagesController@users_list')->name('users_list')->middleware('auth');
 
-Route::get('/contact', 'ContactsController@create')->name('contacts.create');
+Route::get('/admin', 'PagesController@admin')->name('admin')->middleware('auth', 'admin');
 
 Route::get('/contact', 'ContactsController@create')->name('contacts.create');
 
 Route::post('/contact', 'ContactsController@store')->name('contacts.store');
+
+Route::get('/update_form_page/{id}', 'StaticPagesController@update_form')->name('static_pages.update_form');
+
+Route::post('/updated_page', 'StaticPagesController@update')->name('static_pages.update');
 
 Route::get('/show_delete/{id}', 'ProfileController@show_delete')->name('profiles.show_delete')->middleware('auth');
 
