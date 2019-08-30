@@ -16,7 +16,6 @@
 @endsection
 @section('script')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier/1.0.3/oms.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}"
             type="text/javascript">google.maps.event.addDomListener(window, 'load', initMap);
     </script>
