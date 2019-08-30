@@ -1,4 +1,8 @@
 @extends('layouts.default')
+@section('css')
+    <link href="{{ asset('css/images.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/messenger.css') }}" rel="stylesheet" type="text/css">
+@endsection
 
 @section('content')
     <div class="container">
@@ -20,13 +24,16 @@
                 </div>
 
                 @if($users->count() > 0)
-                    <div class="checkbox">
-                        @foreach($users as $user)
-                            <label title="{{ $user->username }}"><input type="checkbox" name="recipients[]"
-                                                                        value="{{ $user->id }}">{!!$user->username!!}
-                            </label>
-                        @endforeach
-                    </div>
+                    <label for="users-search">Ajouter des utilisateurs:</label>
+                    <br>
+                    <input type="search" id="users-search" name="search-bar"
+                           aria-label="Cherchez à travers tous les utilisateurs" class="form-control">
+                    <div id='search-results'></div>
+                    <small><strong>Participant(s) :</strong>
+                        <div class="checkbox" id="checkbox-div">
+
+                        </div>
+                    </small>
             @endif
 
             <!-- Submit Form Input -->
@@ -36,4 +43,14 @@
             </div>
         </form>
     </div>
+@stop
+
+@section('script')
+    @if(isset($asked_user))
+        <script>let askedUser = @json($asked_user);</script>
+    @endif
+    @if(isset($users))
+        <script>let usersList = @json($users);</script>
+        <script src="{{ asset('js/search_users.js') }}" type="text/javascript"></script>
+    @endif
 @stop

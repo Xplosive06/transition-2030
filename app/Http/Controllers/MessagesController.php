@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Cmgmyr\Messenger\Models\Message;
 use Cmgmyr\Messenger\Models\Participant;
 use Cmgmyr\Messenger\Models\Thread;
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -22,13 +23,14 @@ class MessagesController extends Controller
     public function index()
     {
         // All threads, ignore deleted/archived participants
-        $threads = Thread::getAllLatest()->get();
+        // $threads = Thread::getAllLatest()->get();
         // All threads that user is participating in
-        // $threads = Thread::forUser(Auth::id())->latest('updated_at')->get();
+        $threads = Thread::forUser(Auth::id())->latest('updated_at')->get();
         // All threads that user is participating in, with new messages
         // $threads = Thread::forUserWithNewMessages(Auth::id())->latest('updated_at')->get();
         return view('messenger.index', compact('threads'));
     }
+
     /**
      * Shows a message thread.
      *
@@ -51,20 +53,28 @@ class MessagesController extends Controller
         $thread->markAsRead($userId);
         return view('messenger.show', compact('thread', 'users'));
     }
+
     /**
      * Creates a new message thread.
      *
+     * @param null $id
      * @return mixed
      */
-    public function create()
+    public function create($id = null)
     {
         $users = User::where('id', '!=', Auth::id())->get();
+        if ($id){
+            $asked_user = User::find($id);
+            return view('messenger.create', compact('users', 'asked_user'));
+        }
         return view('messenger.create', compact('users'));
     }
+
     /**
      * Stores a new message thread.
      *
      * @return mixed
+     * @throws \Exception
      */
     public function store()
     {
@@ -90,11 +100,13 @@ class MessagesController extends Controller
         }
         return redirect()->route('messages');
     }
+
     /**
      * Adds a new message to a current thread.
      *
      * @param $id
      * @return mixed
+     * @throws \Exception
      */
     public function update($id)
     {

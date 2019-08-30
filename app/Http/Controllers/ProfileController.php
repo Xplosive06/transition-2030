@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
@@ -125,7 +124,7 @@ class ProfileController extends Controller
 
     public function checkIfUserHasImage($user)
     {
-        if (isset($user->avatar)){
+        if (isset($user->avatar) && isset($user->avatar) != 'default.jpg'){
                 File::delete(public_path('img/uploads/avatars/' . $user->avatar));
             }
     }

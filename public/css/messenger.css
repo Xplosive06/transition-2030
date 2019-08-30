@@ -3,3 +3,18 @@
     border: 0;
 }
 
+.row-create-messenger {
+    margin: 0 !important;
+}
+
+.messenger-button {
+    width: 20px;
+    height: fit-content;
+    padding: inherit;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fa-times-circle {
+    font-size: 0.8em;
+}

@@ -5,18 +5,21 @@
 
     <!-- Message Form Input -->
     <div class="form-group">
-        <textarea name="message" class="form-control">{{ old('message') }}</textarea>
+        <textarea rows="5" name="message" class="form-control">{{ old('message') }}</textarea>
     </div>
 
     @if($users->count() > 0)
-        <div class="checkbox">
-            @foreach($users as $user)
-                <label title="{{ $user->username }}">
-                    <input type="checkbox" name="recipients[]" value="{{ $user->id }}">{{ $user->username }}
-                </label>
-            @endforeach
-        </div>
-    @endif
+                    <label for="users-search">Ajouter des utilisateurs:</label>
+                    <br>
+                    <input type="search" id="users-search" name="search-bar"
+                           aria-label="Cherchez à travers tous les utilisateurs" class="form-control">
+                    <div id='search-results'></div>
+                    <small><strong>Participant(s) :</strong>
+                        <div class="checkbox" id="checkbox-div">
+
+                        </div>
+                    </small>
+            @endif
 
     <!-- Submit Form Input -->
     <div class="form-group">

@@ -24,11 +24,11 @@ class CreateMessagesMailsTable extends Migration
 
     /**
      * Reverse the migrations.
-    public function down()
-    {
-    Schema::dropIfExists('mails_messages');
-    }
      *
      * @return void
      */
+    public function down()
+    {
+        Schema::dropIfExists('messages_mails');
+    }
 }
