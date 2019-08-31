@@ -24,14 +24,6 @@
 
     @yield('script_up')
 
-    <style>
-
-        body{
-            padding-top: 85px;
-        }
-
-    </style>
-
 </head>
 <body>
 

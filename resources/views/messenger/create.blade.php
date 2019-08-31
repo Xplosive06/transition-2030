@@ -8,23 +8,42 @@
     <div class="container">
         <h1>Créer une nouvelle discussion</h1>
         <form action="{{ route('messages.store') }}" method="post">
-            {{ csrf_field() }}
+            @csrf
             <div class="col-md-12 col-lg-12 col-sm-12">
                 <!-- Subject Form Input -->
                 <div class="form-group">
-                    <label class="control-label">Titre</label>
-                    <input type="text" class="form-control" name="subject" placeholder="Titre"
-                           value="{{ old('subject') }}">
+                    <label for="subject" class="required control-label">Titre</label>
+                    <input id="subject" type="text" class="form-control @error('subject') is-invalid @enderror"
+                           name="subject"
+                           placeholder="Titre"
+                           value="{{ old('subject') }}" required>
+
+                    @error('subject')
+                    <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                    @enderror
+
                 </div>
+
 
                 <!-- Message Form Input -->
                 <div class="form-group">
-                    <label class="control-label">Message</label>
-                    <textarea rows="5" name="message" class="form-control">{{ old('message') }}</textarea>
+                    <label for="message" class="required control-label">Message</label>
+                    <textarea rows="5" id="message" name="message" required placeholder="Message" class="form-control
+                              @error('message') is-invalid @enderror">{{ old('message') }}</textarea>
+
+                    @error('message')
+                    <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                    @enderror
+
                 </div>
 
+
                 @if($users->count() > 0)
-                    <label for="users-search">Ajouter des utilisateurs:</label>
+                    <label for="users-search">Ajouter des utilisateurs</label>
                     <br>
                     <input type="search" id="users-search" name="search-bar"
                            aria-label="Cherchez à travers tous les utilisateurs" class="form-control">

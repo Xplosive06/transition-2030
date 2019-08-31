@@ -139,6 +139,7 @@ return [
     |
     */
     'attributes' => [
+        'subject'               => 'sujet',
         'name'                  => 'nom',
         'username'              => "nom d'utilisateur",
         'email'                 => 'adresse email',

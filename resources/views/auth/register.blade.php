@@ -49,7 +49,7 @@
 
                             <div class="form-group row">
                                 <label for="username"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Pseudonyme') }}</label>
+                                       class="required col-md-4 col-form-label text-md-right">{{ __('Pseudonyme') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="username" type="text"
@@ -88,7 +88,7 @@
 
                             <div class="form-group row">
                                 <label for="email"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Adresse e-mail') }}</label>
+                                       class="required col-md-4 col-form-label text-md-right">{{ __('Adresse e-mail') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
@@ -105,7 +105,7 @@
 
                             <div class="form-group row">
                                 <label for="password"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
+                                       class="required col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
@@ -122,7 +122,7 @@
 
                             <div class="form-group row">
                                 <label for="password-confirm"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Confirmation du mot de passe') }}</label>
+                                       class="required col-md-4 col-form-label text-md-right">{{ __('Confirmation du mot de passe') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"

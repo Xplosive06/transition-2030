@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\ValidationException;
 
 class MessagesController extends Controller
 {
@@ -49,9 +50,18 @@ class MessagesController extends Controller
         // $users = User::whereNotIn('id', $thread->participantsUserIds())->get();
         // don't show the current user in list
         $userId = Auth::id();
-        $users = User::whereNotIn('id', $thread->participantsUserIds($userId))->get();
-        $thread->markAsRead($userId);
-        return view('messenger.show', compact('thread', 'users'));
+        if ($thread->hasParticipant($userId)) {
+
+            $users = User::whereNotIn('id', $thread->participantsUserIds($userId))->get();
+            $thread->markAsRead($userId);
+            return view('messenger.show', compact('thread', 'users'));
+
+        } else {
+            Session::flash('error_message', 'Vous ne pouvez pas accéder à cette discussion');
+
+            return redirect('messages');
+        }
+
     }
 
     /**
@@ -63,7 +73,7 @@ class MessagesController extends Controller
     public function create($id = null)
     {
         $users = User::where('id', '!=', Auth::id())->get();
-        if ($id){
+        if ($id) {
             $asked_user = User::find($id);
             return view('messenger.create', compact('users', 'asked_user'));
         }
@@ -73,11 +83,17 @@ class MessagesController extends Controller
     /**
      * Stores a new message thread.
      *
+     * @param Request $request
      * @return mixed
-     * @throws \Exception
+     * @throws ValidationException
      */
-    public function store()
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'subject' => 'required|min:3',
+            'message' => 'min:3|required|max:250',
+        ]);
+
         $input = Input::all();
         $thread = Thread::create([
             'subject' => $input['subject'],
@@ -108,8 +124,12 @@ class MessagesController extends Controller
      * @return mixed
      * @throws \Exception
      */
-    public function update($id)
+    public function update($id, Request $request)
     {
+        $this->validate($request, [
+            'message' => 'min:3|required|max:250',
+        ]);
+
         try {
             $thread = Thread::findOrFail($id);
         } catch (ModelNotFoundException $e) {
