@@ -10,7 +10,7 @@ $(document).ready(function () {
             createUserDiv(askedUser);
         }
     } catch (error) {
-        console.error("Aucun utilisateur n'a été ajouté automatiquement, le script peut continuer");
+        console.log("Aucun utilisateur n'a été ajouté automatiquement, le script peut continuer");
     }
     search_bar.addEventListener('input', function () {
         let self = this;
