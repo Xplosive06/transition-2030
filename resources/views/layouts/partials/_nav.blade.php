@@ -14,17 +14,7 @@
                 <li class="nav-item {{ set_active_route('users_list') }}">
                     <a class="nav-link" href="{{ route('users_list') }}">Transitionneurs</a>
                 </li>
-               {{-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="planetDropdown" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">Planet</a>
-                    <div class="dropdown-menu" aria-labelledby="planetDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                        <a class="dropdown-item" href="#">One more separated link</a>
-                    </div>
-                </li>--}}
+
                 <li class="nav-item">
                     <a class="nav-link {{ set_active_route('contacts.create') }}" href="{{ route('contacts.create') }}">Contact</a>
                 </li>
@@ -36,10 +26,7 @@
             <ul class="navbar-nav mr-auto">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Se connecter</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">S'enregistrer</a>
+                        <a class="nav-link" href="{{ route('login') }}">Connexion</a>
                     </li>
                 @else
                     <li class="nav-item dropdown">

@@ -46,7 +46,7 @@
                     <label for="users-search">Ajouter des utilisateurs</label>
                     <br>
                     <input type="search" id="users-search" name="search-bar"
-                           aria-label="Cherchez à travers tous les utilisateurs" class="form-control">
+                           aria-label="Cherchez à travers tous les utilisateurs" class="form-control" autocomplete="off">
                     <div id='search-results'></div>
                     <small><strong>Participant(s) :</strong>
                         <div class="checkbox" id="checkbox-div">

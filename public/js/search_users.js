@@ -1,7 +1,7 @@
 const search_results = document.getElementById('search-results');
 const checkbox_div = document.getElementById('checkbox-div');
 const search_bar = document.getElementById('users-search');
-const results = [];
+let results = [];
 
 $(document).ready(function () {
 
@@ -13,6 +13,7 @@ $(document).ready(function () {
         console.log("Aucun utilisateur n'a été ajouté automatiquement, le script peut continuer");
     }
     search_bar.addEventListener('input', function () {
+        results = [];
         let self = this;
         createUsersElements(self);
     })

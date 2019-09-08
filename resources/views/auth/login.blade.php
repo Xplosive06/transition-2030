@@ -17,11 +17,12 @@
 
                                 <div class="col-md-6">
                                     <input id="login" type="login"
-                                           class="form-control {{ $errors->has('email') || $errors->has('username') ? 'is-invalid' : '' }}" name="login"
+                                           class="form-control {{ $errors->has('email') || $errors->has('username') ? 'is-invalid' : '' }}"
+                                           name="login"
                                            value="{{ old('login') }}" required autocomplete="login" autofocus>
 
                                     @if($errors->has('login') || $errors->has('email') || $errors->has('username'))
-                                    <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('login') ?: $errors->first('email') ?: $errors->first('username') }}</strong>
                                     </span>
                                     @endif
@@ -64,6 +65,10 @@
                                         {{ __('Connexion') }}
                                     </button>
 
+                                    <a id="register" href="#" class="btn btn-link">
+                                        {{ __('Nouveau compte') }}
+                                    </a>
+
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                             {{ __('Vous avez oublié votre mot de passe?') }}
@@ -77,4 +82,15 @@
             </div>
         </div>
     </div>
+
+    @include('auth.modals.register_modal')
 @endsection
+@section('script')
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_API_KEY') }}&libraries=places"></script>
+
+    <script type="text/javascript" src="{{ asset('js/google_input_city.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('js/modal_register.js') }}"></script>
+
+@stop
+

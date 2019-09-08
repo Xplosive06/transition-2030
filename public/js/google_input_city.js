@@ -1,19 +1,28 @@
 google.maps.event.addDomListener(window, 'load', function () {
-    var input = document.getElementById('address_city');
-    var autocomplete = new google.maps.places.Autocomplete(input, {types: ["geocode"]});
+
+    let pacContainerInitialized = false;
+    $('#address_city').keypress(function () {
+        if (!pacContainerInitialized) {
+            $(".pac-container").css("z-index", "9999");
+            pacContainerInitialized = true;
+        }
+    });
+
+    const input = document.getElementById('address_city');
+    const autocomplete = new google.maps.places.Autocomplete(input, {types: ["geocode"]});
 
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
-        var placeResult = autocomplete.getPlace();
-        var placeLatitude = placeResult.geometry.location.lat();
-        var placeLongitude = placeResult.geometry.location.lng();
+        let placeResult = autocomplete.getPlace();
+        let placeLatitude = placeResult.geometry.location.lat();
+        let placeLongitude = placeResult.geometry.location.lng();
 
-        var address_latitude_input = document.getElementById('address_latitude');
-        var address_longitude_input = document.getElementById('address_longitude');
+        let address_latitude_input = document.getElementById('address_latitude');
+        let address_longitude_input = document.getElementById('address_longitude');
 
         console.log(address_latitude_input);
         console.log(address_longitude_input);
 
-        address_latitude_input.value = new Number(placeLatitude);
-        address_longitude_input.value = new Number(placeLongitude);
+        address_latitude_input.value = Number(placeLatitude);
+        address_longitude_input.value = Number(placeLongitude);
     });
 });

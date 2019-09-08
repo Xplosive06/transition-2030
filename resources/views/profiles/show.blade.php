@@ -12,7 +12,7 @@
                 <div class="d-flex justify-content-between">
                     <img class="card-img-top" src="{{ asset('img/uploads/avatars/' . $user->avatar) }}">
 
-                    <h1 class="card-title">
+                    <h1 class="card-title margin-username">
                         {{ $user->username }}
                     </h1>
                 </div>
