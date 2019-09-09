@@ -75,8 +75,10 @@ class MessagesController extends Controller
         $users = User::where('id', '!=', Auth::id())->get();
         if ($id) {
             $asked_user = User::find($id);
+            flashy($asked_user->username . ' a été ajouté à la discussion!');
             return view('messenger.create', compact('users', 'asked_user'));
         }
+
         return view('messenger.create', compact('users'));
     }
 
@@ -114,6 +116,8 @@ class MessagesController extends Controller
         if (Input::has('recipients')) {
             $thread->addParticipant($input['recipients']);
         }
+        flashy('La discussion ' . '"' . $input['subject'] . '"' .' a été créée!');
+
         return redirect()->route('messages');
     }
 

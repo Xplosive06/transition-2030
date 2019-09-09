@@ -63,7 +63,7 @@
                             <input id="address_city" type="search"
                                    class="form-control"
                                    name="address_city"
-                                   value="{{ old('address_city') }}" autofocus>
+                                   value="{{ old('address_city') }}" autofocus placeholder="">
                             <input type="hidden" name="address_latitude" id="address_latitude" value=""/>
                             <input type="hidden" name="address_longitude" id="address_longitude" value=""/>
                             <small class="help-block invalid-feedback"></small>
